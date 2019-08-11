@@ -1,3 +1,4 @@
+
 package _03_To_Do_List;
 
 import java.awt.event.MouseEvent;
@@ -90,6 +91,7 @@ public class ToDoList implements MouseListener {
 				String line = br.readLine();
 				while(line != null){
 					tasks.add(line);
+					line = br.readLine();
 				}
 			} catch (IOException e1) {
 				// TODO Auto-generated catch block

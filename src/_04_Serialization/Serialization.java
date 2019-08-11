@@ -41,7 +41,7 @@ public class Serialization {
 	 */
 	private static void save(SaveData data) {
 		try (FileOutputStream fos = new FileOutputStream(new File(DATA_FILE)); ObjectOutputStream oos = new ObjectOutputStream(fos)) {
-			oos.writeObject(data);
+			oos.writeObject(data);    //makes space in file for data, inputs incoming data
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -50,7 +50,7 @@ public class Serialization {
 	private static SaveData load() {
 		try (FileInputStream fis = new FileInputStream(new File(DATA_FILE)); ObjectInputStream ois = new ObjectInputStream(fis)) {
 			return (SaveData) ois.readObject();
-		} catch (IOException e) {
+		} catch (IOException e) {      
 			e.printStackTrace();
 			return null;
 		} catch (ClassNotFoundException e) {
